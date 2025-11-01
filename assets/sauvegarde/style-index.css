@@ -1,0 +1,170 @@
+/* ===== STYLE SPÉCIFIQUE PAGE D'ACCUEIL ===== */
+
+/* Container du portrait */
+.picture {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+}
+
+.picture img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    object-position: 90% 20%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5), 
+                -15px 0 30px #7b2ff7, 
+                15px 0 30px #00c6ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.picture img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.6), 
+                -20px 0 40px #7b2ff7, 
+                20px 0 40px #00c6ff;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    color: #7b2ff7;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #7b2ff7, #00c6ff) 1;
+}
+
+/* ===== SECTION À PROPOS ===== */
+section p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* ===== COORDONNÉES ===== */
+address {
+    font-style: normal;
+}
+
+address ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+address li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+address a {
+    color: #7b2ff7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+address a:hover {
+    color: #00c6ff;
+    text-decoration: underline;
+}
+
+/* ===== INFORMATIONS UTILES ===== */
+section ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+section li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+section li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #7b2ff7;
+    font-weight: bold;
+}
+
+/* ===== LIENS UTILES ===== */
+section:last-of-type ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-left: 0;
+}
+
+section:last-of-type li {
+    padding: 0;
+}
+
+section:last-of-type li::before {
+    content: none;
+}
+
+section:last-of-type a {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(123, 47, 247, 0.3);
+}
+
+section:last-of-type a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(123, 47, 247, 0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .picture img {
+        width: 15rem;
+        height: 15rem;
+    }
+    
+    section {
+        padding: 1rem;
+    }
+    
+    section:last-of-type ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .picture img {
+        width: 12rem;
+        height: 12rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
+    }
+}

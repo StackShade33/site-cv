@@ -1,0 +1,163 @@
+/* ===== STYLE SPÉCIFIQUE PAGE FORMATIONS ===== */
+
+/* ===== STYLE DU HEADER ===== */
+header {
+    margin-top: 70px; /* Pour compenser la nav fixe */
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+header h1 {
+    color: #02263e;
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 0; /* Ajouté pour compenser le déplacement du h1 */
+}
+
+/* ===== SECTIONS ===== */
+section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:first-of-type {
+    margin-top: 2rem; /* Ajouté pour espacer du header */
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    color: #7b2ff7;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #7b2ff7, #00c6ff) 1;
+}
+
+/* ===== LISTES DES FORMATIONS ===== */
+section ul {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+section li {
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(123, 47, 247, 0.1);
+    transition: all 0.3s ease;
+}
+
+section li:last-child {
+    border-bottom: none;
+}
+
+section li:hover {
+    padding-left: 2.5rem;
+    color: #333;
+    background: rgba(123, 47, 247, 0.05);
+}
+
+/* Icône avant chaque formation */
+section li::before {
+    content: "🎓";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Style pour les années */
+section li time {
+    font-weight: 600;
+    color: #7b2ff7;
+}
+
+/* ===== DISTINCTION FORMATIONS PRIVÉES ===== */
+section:nth-of-type(2) {
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #00c6ff, #7b2ff7) 1;
+}
+
+section:nth-of-type(2) li::before {
+    content: "💼";
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header {
+        margin-top: 60px;
+        padding: 1.5rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    main {
+        padding: 1rem;
+        padding-top: 0; /* Ajouté */
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
+    }
+    
+    section li {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+    }
+    
+    section li:hover {
+        padding-left: 2.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        margin-top: 55px;
+        padding: 1rem;
+    }
+    
+    section {
+        padding: 1rem;
+    }
+    
+    section h2 {
+        font-size: 1.2rem;
+    }
+    
+    section li {
+        padding: 0.6rem 0;
+        padding-left: 1.8rem;
+        font-size: 0.9rem;
+    }
+    
+    section li::before {
+        font-size: 1rem;
+    }
+}

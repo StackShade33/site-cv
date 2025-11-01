@@ -1,0 +1,158 @@
+/* ===== RESET BASIQUE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== STYLE DU BODY ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: url(../images/textures/vague-lisse.jpg) fixed no-repeat top left / cover;
+}
+
+/* ===== NAVIGATION FIXE ===== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #7b2ff7, #00c6ff);
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Style du lien actif */
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    font-weight: 900;
+}
+
+nav a:visited {
+    color: #ffffff;
+}
+
+/* ===== MAIN ===== */
+main {
+    margin-top: 90px;
+    padding: 2rem;
+}
+
+/* Titres */
+h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #02263e;
+}
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Paragraphes et listes */
+p, li {
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 1.2rem 1rem;
+    background: linear-gradient(90deg, #7b2ff7, #00c6ff);
+    margin-top: 2rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+footer small {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+footer .btn-home {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+footer .btn-home:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    nav ul {
+        gap: 0.5rem;
+    }
+    
+    nav a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.7rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,126 @@
+/* ===== STYLE SPÉCIFIQUE PAGE LETTRES DE RECOMMANDATION ===== */
+
+main {
+    max-width: 1000px;
+    margin: 90px auto 0;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #02263e;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* ===== SECTIONS (CHAQUE LETTRE) ===== */
+section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== TITRES DES LETTRES ===== */
+section h2 {
+    color: #7b2ff7;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== INFORMATIONS (POSTE ET ANNÉE) ===== */
+section p {
+    color: #666;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* ===== IMAGES DES LETTRES ===== */
+section img {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background: #f8f9fa;
+    padding: 1rem;
+}
+
+section img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(123, 47, 247, 0.3);
+}
+
+/* ===== EFFET DE DISTINCTION ENTRE LES LETTRES ===== */
+section:nth-of-type(odd) {
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #7b2ff7, #00c6ff) 1;
+}
+
+section:nth-of-type(even) {
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #00c6ff, #7b2ff7) 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
+    }
+    
+    section img {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1rem;
+    }
+    
+    section h2 {
+        font-size: 1.2rem;
+    }
+    
+    section p {
+        font-size: 0.9rem;
+    }
+    
+    section img {
+        border-radius: 8px;
+    }
+}
+
+/* ===== EFFET LIGHTBOX (OPTIONNEL) ===== */
+/* Si tu veux ajouter un effet de zoom en cliquant sur l'image plus tard */
+section img:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,151 @@
+/* ===== STYLE SPÉCIFIQUE PAGE COMPÉTENCES ===== */
+
+main {
+    max-width: 1000px;
+    margin: 90px auto 0;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #02263e;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    margin-bottom: 3rem;
+}
+
+section > h2 {
+    color: #7b2ff7;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #7b2ff7, #00c6ff) 1;
+}
+
+/* ===== ARTICLES (CATÉGORIES DE COMPÉTENCES) ===== */
+article {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #7b2ff7;
+}
+
+article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== TITRES DES COMPÉTENCES ===== */
+article h3 {
+    color: #02263e;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Badge pour "Débutante" */
+article h3::after {
+    content: "";
+}
+
+article h3:contains("Débutante")::after,
+article:has(h3:contains("Débutante")) h3::after {
+    content: "🌱";
+    font-size: 1rem;
+}
+
+/* ===== LISTES DES COMPÉTENCES ===== */
+article ul {
+    margin-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+article li {
+    padding: 0.4rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+}
+
+article li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00c6ff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ===== DISTINCTION COMPÉTENCES INFORMATIQUES ===== */
+section:first-of-type article {
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #7b2ff7, #00c6ff) 1;
+}
+
+section:first-of-type article li::before {
+    content: "▸";
+    color: #7b2ff7;
+}
+
+/* ===== STYLE SPÉCIAL POUR "A VENIR" ===== */
+article:has(li:contains("A venir")) {
+    opacity: 0.7;
+    border-left-color: #999;
+}
+
+article li:contains("A venir") {
+    font-style: italic;
+    color: #999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    section > h2 {
+        font-size: 1.4rem;
+    }
+    
+    article {
+        padding: 1rem;
+    }
+    
+    article h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    article {
+        padding: 0.8rem;
+    }
+    
+    article h3 {
+        font-size: 1rem;
+    }
+    
+    article li {
+        font-size: 0.9rem;
+        padding-left: 1.5rem;
+    }
+}

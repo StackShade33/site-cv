@@ -1,0 +1,156 @@
+/* ===== STYLE SPÉCIFIQUE PAGE CENTRES D'INTÉRÊT ===== */
+
+main {
+    max-width: 1200px;
+    margin: 90px auto 0;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #02263e;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* ===== SECTION ===== */
+section h2 {
+    color: #7b2ff7;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #7b2ff7, #00c6ff) 1;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== GRILLE D'IMAGES ===== */
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Le h2 doit occuper toute la largeur */
+section h2 {
+    grid-column: 1 / -1;
+}
+
+/* ===== FIGURES (CARTES D'INTÉRÊT) ===== */
+figure {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+    cursor: pointer;
+}
+
+figure:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(123, 47, 247, 0.3);
+}
+
+/* ===== IMAGES ===== */
+figure img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+figure:hover img {
+    transform: scale(1.1);
+}
+
+/* ===== LÉGENDES ===== */
+figcaption {
+    padding: 1.2rem;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    background: linear-gradient(135deg, rgba(123, 47, 247, 0.05), rgba(0, 198, 255, 0.05));
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    section {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+    
+    figure img {
+        height: 220px;
+    }
+    
+    figcaption {
+        padding: 1rem;
+        font-size: 0.95rem;
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    figure img {
+        height: 200px;
+    }
+    
+    figcaption {
+        font-size: 0.9rem;
+        min-height: 55px;
+    }
+}
+
+/* ===== ANIMATIONS AU CHARGEMENT ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+figure {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+figure:nth-child(2) { animation-delay: 0.1s; }
+figure:nth-child(3) { animation-delay: 0.2s; }
+figure:nth-child(4) { animation-delay: 0.3s; }
+figure:nth-child(5) { animation-delay: 0.4s; }
+figure:nth-child(6) { animation-delay: 0.5s; }
+figure:nth-child(7) { animation-delay: 0.6s; }
+figure:nth-child(8) { animation-delay: 0.7s; }
+figure:nth-child(9) { animation-delay: 0.8s; }

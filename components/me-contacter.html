@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/logo-code.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style-contact.css">
+    <title>Me contacter</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html" aria-label="Retourner à la page d'accueil">Accueil</a></li>
+                <li><a href="../components/cursus.html" aria-label="Voir mon cursus et mes diplômes">Cursus</a></li>
+                <li><a href="../components/experiences.html" aria-label="Voir mes expériences professionnelles">Expériences</a></li>
+                <li><a href="../components/competences.html" aria-label="Voir mes compétences">Compétences</a></li>
+                <li><a href="../components/formations.html" aria-label="Voir mes formations">Formations</a></li>
+                <li><a href="../components/centres-d-interet.html" aria-label="Voir mes centres d'intérêt">Centres d'intérêt</a></li>
+                <li><a href="../components/lettre-de-motivation.html" aria-label="Lire ma lettre de motivation">Motivation</a></li>
+                <li><a href="../components/lettres-de-recommandation.html" aria-label="Lire mes lettres de recommandation">Recommandations</a></li>
+                <li><a href="../components/me-contacter.html" aria-label="Me contacter" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Formulaire de Contact</h1>
+    </header>
+    
+    <main><!--Intégrer un tableau avec les jours et horaires de disponibilité-->
+        <form action="#" method="post">
+            <section>
+                <fieldset>
+                    <legend>Informations personnelles</legend>
+
+                    <div>
+                        <input type="radio" name="gender" id="Mme" value="Mme">
+                        <label for="Mme">Mme</label>
+                        <input type="radio" name="gender" id="M" value="M." checked>
+                        <label for="M">M.</label>
+                    </div>
+
+                    <div>
+                        <label for="firstname">Prénom *</label>
+                        <input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required>
+                        <label for="lastname">Nom *</label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Votre nom" required>
+                        <label for="structure">Structure</label>
+                        <input type="text" name="structure" id="structure" placeholder="Votre structure">
+                        <label for="email">Email *</label>
+                        <input type="email" name="email" id="email" placeholder="Votre adresse mail" required>
+                        <label for="tel">Tél *</label>
+                        <input type="tel" name="tel" id="tel" placeholder="Votre téléphone" required>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section>
+                <fieldset>
+                    <legend>Votre message</legend>
+
+                    <div>
+                        <label for="object">Dans quel cadre</label>
+                        <select name="object" id="object">
+                            <option value="private">Personnel</option>
+                            <option value="professional">Professionnel</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="topic">Objet *</label>
+                        <input type="text" name="topic" id="topic" placeholder="L'objet de votre message" required>
+                    </div>
+
+                    <div>
+                        <label for="message">Message *</label>
+                        <textarea name="message" id="message" cols="60" rows="10" placeholder="Saisissez votre message ici" required></textarea>
+                    </div>
+
+                    <div>
+                        <label for="attachment" >Ajouter une pièce jointe</label>
+                        <input type="file" name="attachment" id="attachment">
+                    </div>
+
+                    <div>
+                        <label for="attachment2" ></label>
+                        <input type="file" name="attachment" id="attachment2">
+                    </div>
+
+                    <div>
+                        <label for="attachment3" ></label>
+                        <input type="file" name="attachment" id="attachment3">
+                    </div>
+                </fieldset>
+            </section>
+
+            <section>
+                <fieldset>
+                    <legend>Options</legend>
+
+                    <div>
+                        <input type="checkbox" name="copy" id="copy">
+                        <label for="copy">Recevoir une copie du message</label>
+                    </div>
+
+                    <div>
+                        <label>Être contacté de préférence</label>
+                        <input type="checkbox" name="contact" id="contact-phone" value="phone">
+                        <label for="contact-phone">Par téléphone</label>
+                        <input type="checkbox" name="contact" id="contact-email" value="email" checked>
+                        <label for="contact-email">Par email</label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section>
+                <div>
+                    <strong>*: champs obligatoires</strong>
+                </div>
+
+                <div> <!--Si je mets la class="button" dans le div ça ne fonctionne pas-->
+                    <input class="button" type="submit" name="submit" id="submit" value="Valider">
+                    <input class="button" type="reset" name="reset" id="reset" value="Effacer">
+                </div>
+            </section>
+        </form>
+
+    </main>
+    
+    <footer>
+        <!-- Voir pour mettre à jour la date automatiquement avec JS-->
+        <small>*Cette page est une démonstration technique. Le formulaire n'est pas fonctionnel, merci d'utiliser les coordonnées disponibles sur la page d'accueil.</small>
+        <small>Cette page a été mise à jour le <time datetime="2025-10-08">08/10/2025</time></small>
+        <a href="../index.html" class="btn-home">Retour à l'accueil</a>
+    </footer>
+</body>
+</html>

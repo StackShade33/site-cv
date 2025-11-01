@@ -1,0 +1,197 @@
+/* ===== STYLE SPÉCIFIQUE PAGE LETTRE DE MOTIVATION ===== */
+
+main {
+    max-width: 800px;
+    margin: 90px auto 0;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+h1 {
+    text-align: center;
+    color: #02263e;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #7b2ff7, #00c6ff) 1;
+    padding-bottom: 1rem;
+}
+
+/* ===== MISE EN PAGE LETTRE ===== */
+main > div {
+    margin-bottom: 1.5rem;
+}
+
+/* Date */
+main > div:first-of-type {
+    text-align: right;
+    font-style: italic;
+    color: #666;
+}
+
+/* Adresse expéditeur */
+main > div:nth-of-type(2) address {
+    font-style: normal;
+    line-height: 1.6;
+    color: #333;
+}
+
+main > div:nth-of-type(2) address p {
+    margin: 0.2rem 0;
+}
+
+main > div:nth-of-type(2) address a {
+    color: #7b2ff7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+main > div:nth-of-type(2) address a:hover {
+    color: #00c6ff;
+    text-decoration: underline;
+}
+
+/* Adresse destinataire */
+.destination {
+    margin-top: 2rem;
+    margin-left: auto;
+    text-align: right;
+    max-width: 300px;
+}
+
+.destination address {
+    font-style: normal;
+    line-height: 1.6;
+    color: #333;
+}
+
+.destination address p {
+    margin: 0.2rem 0;
+}
+
+/* Objet */
+main > div:nth-of-type(4) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+main > div:nth-of-type(4) p {
+    font-weight: bold;
+    color: #02263e;
+    text-decoration: underline;
+}
+
+/* Corps de la lettre */
+main > div:last-of-type {
+    text-align: justify;
+    line-height: 1.8;
+    color: #333;
+}
+
+main > div:last-of-type p {
+    margin-bottom: 1.2rem;
+    text-indent: 2rem;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+/* Premier paragraphe (salutation) */
+main > div:last-of-type p:first-child {
+    text-indent: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Avant-dernier et dernier paragraphes (formule de politesse et signature) */
+main > div:last-of-type p:nth-last-child(2),
+main > div:last-of-type p:nth-last-child(1) {
+    text-indent: 0;
+    margin-top: 1.5rem;
+}
+
+/* Signature */
+main > div:last-of-type p:last-child {
+    text-align: right;
+    font-weight: bold;
+    color: #02263e;
+    margin-top: 2rem;
+}
+
+/* ===== FOOTER SPÉCIAL ===== */
+footer {
+    background: linear-gradient(90deg, #7b2ff7, #00c6ff);
+    color: #ffffff;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+footer > small:first-child {
+    font-style: italic;
+    opacity: 0.95;
+    font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    main {
+        padding: 2rem 1.5rem;
+        margin: 90px 1rem 0;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    main > div:last-of-type {
+        text-align: left;
+    }
+    
+    main > div:last-of-type p {
+        text-indent: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .destination {
+        text-align: left;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1.5rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    main > div:last-of-type {
+        line-height: 1.6;
+    }
+}
+
+/* ===== EFFET D'IMPRESSION ===== */
+@media print {
+    body {
+        background: white;
+    }
+    
+    nav, footer {
+        display: none;
+    }
+    
+    main {
+        box-shadow: none;
+        max-width: 100%;
+        margin: 0;
+        padding: 2cm;
+    }
+}

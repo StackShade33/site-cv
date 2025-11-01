@@ -1,0 +1,139 @@
+/* ===== STYLE SPÉCIFIQUE PAGE EXPÉRIENCES ===== */
+
+main {
+    max-width: 1000px;
+    margin: 90px auto 0;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #02263e;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    margin-bottom: 3rem;
+}
+
+section > h2 {
+    color: #7b2ff7;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #7b2ff7, #00c6ff) 1;
+}
+
+/* ===== ARTICLES (EXPÉRIENCES) ===== */
+article {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #7b2ff7, #00c6ff) 1;
+}
+
+article:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== TITRES DES EXPÉRIENCES ===== */
+article h3 {
+    color: #02263e;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* ===== LISTES DES MISSIONS ===== */
+article ul {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+article li {
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+article li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #7b2ff7;
+    font-weight: bold;
+}
+
+/* ===== DATES ===== */
+article > p:last-child {
+    color: #7b2ff7;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+/* ===== PARAGRAPHES DESCRIPTIFS ===== */
+article p:not(:last-child) {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== DISTINCTION AUTRES EXPÉRIENCES ===== */
+section:nth-of-type(2) article {
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, #00c6ff, #7b2ff7) 1;
+}
+
+section:nth-of-type(2) article:hover {
+    transform: translateX(5px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    section > h2 {
+        font-size: 1.4rem;
+    }
+    
+    article {
+        padding: 1rem;
+    }
+    
+    article h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    article {
+        padding: 0.8rem;
+    }
+    
+    article h3 {
+        font-size: 1rem;
+    }
+    
+    article li {
+        font-size: 0.9rem;
+    }
+}

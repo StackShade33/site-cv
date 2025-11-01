@@ -1,0 +1,166 @@
+/* ===== STYLE SPÉCIFIQUE PAGE CURSUS ===== */
+
+main {
+    max-width: 900px;
+    margin: 90px auto 0;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #02263e;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* ===== TIMELINE ===== */
+main {
+    position: relative;
+}
+
+/* Ligne verticale de la timeline */
+main::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    bottom: 100px;
+    width: 4px;
+    background: linear-gradient(180deg, #7b2ff7, #00c6ff);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* ===== SECTIONS DIPLÔMES ===== */
+section {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    width: calc(50% - 40px);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Alternance gauche/droite */
+section:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+section:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Point sur la timeline */
+section::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(123, 47, 247, 0.5);
+    z-index: 2;
+}
+
+section:nth-child(odd)::before {
+    right: -50px;
+}
+
+section:nth-child(even)::before {
+    left: -50px;
+}
+
+/* ===== CONTENU DES SECTIONS ===== */
+section h2 {
+    color: #7b2ff7;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+section p {
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+section img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background: #f8f9fa;
+    padding: 0.5rem;
+}
+
+section img:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+/* Image "En cours" spécifique */
+section img[alt="En cours"] {
+    max-height: 150px;
+    opacity: 0.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    /* Suppression de la timeline sur mobile */
+    main::before {
+        left: 20px;
+        transform: none;
+    }
+    
+    section {
+        width: 100%;
+        margin-left: 50px !important;
+        margin-right: 0 !important;
+    }
+    
+    section::before {
+        left: -35px !important;
+        right: auto !important;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    section h2 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1rem;
+    }
+    
+    section {
+        margin-left: 40px !important;
+        padding: 1rem;
+    }
+    
+    section::before {
+        left: -30px !important;
+        width: 15px;
+        height: 15px;
+    }
+}

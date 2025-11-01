@@ -1,0 +1,157 @@
+/* ===== STYLE SPÉCIFIQUE PAGE CENTRES D'INTÉRÊT ===== */
+
+/* ===== STYLE DU HEADER ===== */
+header {
+    margin-top: 70px; /* Pour compenser la nav fixe */
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+header h1 {
+    color: #02263e;
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 0; /* Ajouté pour compenser le déplacement du h1 */
+}
+
+/* ===== GRILLE D'IMAGES ===== */
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem; /* Ajouté pour espacer du header */
+}
+
+/* ===== FIGURES (CARTES D'INTÉRÊT) ===== */
+figure {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+    cursor: pointer;
+}
+
+figure:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(123, 47, 247, 0.3);
+}
+
+/* ===== IMAGES ===== */
+figure img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+figure:hover img {
+    transform: scale(1.1);
+}
+
+/* ===== LÉGENDES ===== */
+figcaption {
+    padding: 1.2rem;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    background: linear-gradient(135deg, rgba(123, 47, 247, 0.05), rgba(0, 198, 255, 0.05));
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header {
+        margin-top: 60px;
+        padding: 1.5rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    main {
+        padding: 1rem;
+        padding-top: 0; /* Ajouté */
+    }
+    
+    section {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    figure img {
+        height: 220px;
+    }
+    
+    figcaption {
+        padding: 1rem;
+        font-size: 0.95rem;
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        margin-top: 55px;
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    figure img {
+        height: 200px;
+    }
+    
+    figcaption {
+        font-size: 0.9rem;
+        min-height: 55px;
+    }
+}
+
+/* ===== ANIMATIONS AU CHARGEMENT ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+figure {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+figure:nth-child(2) { animation-delay: 0.1s; }
+figure:nth-child(3) { animation-delay: 0.2s; }
+figure:nth-child(4) { animation-delay: 0.3s; }
+figure:nth-child(5) { animation-delay: 0.4s; }
+figure:nth-child(6) { animation-delay: 0.5s; }
+figure:nth-child(7) { animation-delay: 0.6s; }
+figure:nth-child(8) { animation-delay: 0.7s; }
+figure:nth-child(9) { animation-delay: 0.8s; }

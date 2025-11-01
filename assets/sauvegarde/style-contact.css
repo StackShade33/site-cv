@@ -1,0 +1,249 @@
+/* ===== STYLE SPÉCIFIQUE PAGE CONTACT ===== */
+
+main {
+    max-width: 800px;
+    margin: 90px auto 0;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #02263e;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* ===== FORMULAIRE ===== */
+form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+form > div {
+    margin-bottom: 2rem;
+}
+
+/* ===== FIELDSETS ===== */
+fieldset {
+    border: 2px solid;
+    border-image: linear-gradient(90deg, #7b2ff7, #00c6ff) 1;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    color: #7b2ff7;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+/* ===== GROUPES DE CHAMPS ===== */
+fieldset > div {
+    margin-bottom: 1rem;
+}
+
+fieldset > div:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== LABELS ===== */
+label {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+/* Labels pour radio et checkbox (inline) */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline;
+    margin-left: 0.5rem;
+    margin-right: 1.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* ===== INPUTS ET SELECT ===== */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #7b2ff7;
+    box-shadow: 0 0 10px rgba(123, 47, 247, 0.2);
+}
+
+/* ===== RADIO ET CHECKBOX ===== */
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #7b2ff7;
+    width: 18px;
+    height: 18px;
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== FILE INPUT ===== */
+input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #7b2ff7;
+}
+
+/* ===== SECTION BOUTONS ===== */
+form > div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+form > div:last-child > div:first-child {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+form > div:last-child > div:last-child {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ===== BOUTONS ===== */
+.button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="submit"].button {
+    background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(123, 47, 247, 0.3);
+}
+
+input[type="submit"].button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(123, 47, 247, 0.5);
+}
+
+input[type="reset"].button {
+    background: rgba(255, 255, 255, 0.8);
+    color: #666;
+    border: 2px solid #ddd;
+}
+
+input[type="reset"].button:hover {
+    background: #f5f5f5;
+    border-color: #999;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+    
+    fieldset {
+        padding: 1rem;
+    }
+    
+    form > div:last-child {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    form > div:last-child > div:last-child {
+        flex-direction: column;
+    }
+    
+    .button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 1rem;
+    }
+    
+    fieldset {
+        padding: 0.8rem;
+    }
+    
+    legend {
+        font-size: 1.1rem;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        font-size: 0.95rem;
+    }
+    
+    .button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
