@@ -22,6 +22,7 @@ main {
     padding: 2rem;
     padding-top: 3rem; /* Ajouté pour espacer du header */
     position: relative;
+    overflow-x: hidden; /* AJOUTÉ : Empêche le scroll horizontal */
 }
 
 /* ===== TIMELINE ===== */
@@ -49,6 +50,7 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
     width: calc(50% - 40px);
+    max-width: calc(50% - 40px); /* AJOUTÉ : Force la largeur maximale */
 }
 
 section:hover {
@@ -102,6 +104,7 @@ section h2 {
     margin-top: 0;
     margin-bottom: 0.5rem;
     line-height: 1.4;
+    word-wrap: break-word; /* AJOUTÉ : Force le retour à la ligne */
 }
 
 section small {
@@ -201,6 +204,8 @@ section:nth-child(7) { animation-delay: 0.6s; }
     
     main {
         padding-top: 2rem; /* Ajouté */
+        padding-left: 1rem; /* AJOUTÉ : Réduit le padding */
+        padding-right: 1rem; /* AJOUTÉ : Réduit le padding */
     }
     
     /* Suppression de la timeline sur mobile */
@@ -211,7 +216,8 @@ section:nth-child(7) { animation-delay: 0.6s; }
     }
     
     section {
-        width: 100%;
+        width: calc(100% - 50px); /* MODIFIÉ : Ajusté pour mobile */
+        max-width: calc(100% - 50px); /* AJOUTÉ */
         margin-left: 50px !important;
         margin-right: 0 !important;
     }
@@ -239,9 +245,13 @@ section:nth-child(7) { animation-delay: 0.6s; }
     main {
         padding: 1rem;
         padding-top: 1.5rem; /* Ajouté */
+        padding-left: 0.5rem; /* AJOUTÉ : Encore moins de padding */
+        padding-right: 0.5rem; /* AJOUTÉ : Encore moins de padding */
     }
     
     section {
+        width: calc(100% - 40px); /* MODIFIÉ : Ajusté pour petit mobile */
+        max-width: calc(100% - 40px); /* AJOUTÉ */
         margin-left: 40px !important;
         padding: 1rem;
     }
@@ -332,6 +342,7 @@ section:nth-child(7) { animation-delay: 0.6s; }
     
     section {
         width: 100% !important;
+        max-width: 100% !important; /* AJOUTÉ */
         margin: 0 0 2rem 0 !important;
         page-break-inside: avoid;
         box-shadow: none;
