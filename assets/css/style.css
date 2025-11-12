@@ -84,7 +84,7 @@ abbr[title] {
     padding: 10px;
     z-index: 1001;
     position: fixed; /* IMPORTANT : Fixed pour rester dans la nav même en scrollant */
-    top: 0.8rem; /* AJUSTÉ : pour être centré dans la nav plus haute */
+    top: 1.2rem; /* AJUSTÉ : pour être centré dans la nav beaucoup plus haute */
     right: 15px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
@@ -133,7 +133,7 @@ nav {
     left: 0;
     width: 100%;
     background: linear-gradient(90deg, #7b2ff7, #00c6ff);
-    padding: 1.2rem 0; /* AUGMENTÉ : de 1rem à 1.2rem pour contenir le burger */
+    padding: 1.8rem 0; /* AUGMENTÉ ENCORE : de 1.2rem à 1.8rem */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 1000;
 }
@@ -260,7 +260,7 @@ footer .btn-home:hover {
     }
 
     nav {
-        padding: 1.2rem 0.5rem; /* CORRIGÉ : garde 1.2rem en hauteur pour contenir le burger */
+        padding: 1.8rem 0.5rem; /* AUGMENTÉ : pareil que desktop, 1.8rem */
     }
     
     /* Menu déroulant sur mobile */
