@@ -56,6 +56,12 @@ section:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Focus visible pour l'accessibilité */
+section:focus-within {
+    outline: 3px solid #7b2ff7;
+    outline-offset: 3px;
+}
+
 /* Alternance gauche/droite */
 section:nth-child(odd) {
     margin-left: 0;
@@ -95,6 +101,7 @@ section h2 {
     font-size: 1.3rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
+    line-height: 1.4;
 }
 
 section small {
@@ -122,11 +129,64 @@ section img:hover {
     cursor: pointer;
 }
 
+section img:focus {
+    outline: 3px solid #7b2ff7;
+    outline-offset: 3px;
+}
+
 /* Image "En cours" spécifique */
-section img[alt="En cours"] {
+section img[alt*="cours"],
+section img[alt*="loading"] {
     max-height: 150px;
     opacity: 0.7;
+    animation: pulse 2s infinite ease-in-out;
 }
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
+/* ===== ABRÉVIATIONS ===== */
+abbr[title] {
+    text-decoration: underline dotted #7b2ff7;
+    cursor: help;
+    border-bottom: none;
+}
+
+abbr[title]:hover,
+abbr[title]:focus {
+    text-decoration-color: #00c6ff;
+    color: #7b2ff7;
+}
+
+/* ===== ANIMATIONS AU CHARGEMENT ===== */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+section {
+    animation: fadeInScale 0.5s ease-out backwards;
+}
+
+section:nth-child(1) { animation-delay: 0s; }
+section:nth-child(2) { animation-delay: 0.1s; }
+section:nth-child(3) { animation-delay: 0.2s; }
+section:nth-child(4) { animation-delay: 0.3s; }
+section:nth-child(5) { animation-delay: 0.4s; }
+section:nth-child(6) { animation-delay: 0.5s; }
+section:nth-child(7) { animation-delay: 0.6s; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
@@ -172,6 +232,10 @@ section img[alt="En cours"] {
         padding: 1rem;
     }
     
+    header h1 {
+        font-size: 1.3rem;
+    }
+    
     main {
         padding: 1rem;
         padding-top: 1.5rem; /* Ajouté */
@@ -186,5 +250,100 @@ section img[alt="En cours"] {
         left: -30px !important;
         width: 15px;
         height: 15px;
+    }
+    
+    section h2 {
+        font-size: 1rem;
+    }
+    
+    section small {
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== MODE SOMBRE ===== */
+@media (prefers-color-scheme: dark) {
+    section {
+        background: rgba(40, 40, 40, 0.95);
+    }
+    
+    section h2 {
+        color: #00c6ff;
+    }
+    
+    section small {
+        color: #b0b0b0;
+    }
+    
+    section img {
+        background: #2d2d2d;
+    }
+    
+    section::before {
+        border-color: #2d2d2d;
+    }
+}
+
+/* ===== MODE CONTRASTE ÉLEVÉ ===== */
+@media (prefers-contrast: high) {
+    section {
+        border: 2px solid currentColor;
+    }
+    
+    section::before {
+        border-width: 3px;
+        border-color: currentColor;
+    }
+    
+    main::before {
+        background: currentColor;
+    }
+}
+
+/* ===== RESPECT DE LA PRÉFÉRENCE DE MOUVEMENT RÉDUIT ===== */
+@media (prefers-reduced-motion: reduce) {
+    section,
+    section img,
+    section img[alt*="cours"] {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    section:hover,
+    section img:hover {
+        transform: none;
+    }
+}
+
+/* ===== IMPRESSION ===== */
+@media print {
+    header {
+        margin-top: 0;
+        padding: 1rem;
+    }
+    
+    main::before {
+        display: none;
+    }
+    
+    section::before {
+        display: none;
+    }
+    
+    section {
+        width: 100% !important;
+        margin: 0 0 2rem 0 !important;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    section:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    section img {
+        max-height: 300px;
     }
 }

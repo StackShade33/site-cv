@@ -51,6 +51,12 @@ main {
                 20px 0 40px #00c6ff;
 }
 
+/* Focus visible pour l'accessibilité */
+.picture img:focus {
+    outline: 3px solid #7b2ff7;
+    outline-offset: 5px;
+}
+
 /* ===== SECTIONS ===== */
 section {
     background: rgba(255, 255, 255, 0.9);
@@ -64,6 +70,12 @@ section {
 section:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus visible sur les sections */
+section:focus-within {
+    outline: 3px solid #7b2ff7;
+    outline-offset: 3px;
 }
 
 section h2 {
@@ -104,7 +116,8 @@ address a {
     transition: color 0.3s ease;
 }
 
-address a:hover {
+address a:hover,
+address a:focus {
     color: #00c6ff;
     text-decoration: underline;
 }
@@ -127,6 +140,19 @@ section li::before {
     left: 0;
     color: #7b2ff7;
     font-weight: bold;
+}
+
+/* ===== ABRÉVIATIONS ===== */
+abbr[title] {
+    text-decoration: underline dotted #7b2ff7;
+    cursor: help;
+    border-bottom: none;
+}
+
+abbr[title]:hover,
+abbr[title]:focus {
+    text-decoration-color: #00c6ff;
+    color: #7b2ff7;
 }
 
 /* ===== LIENS UTILES ===== */
@@ -162,6 +188,38 @@ section:last-of-type a:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(123, 47, 247, 0.5);
 }
+
+section:last-of-type a:focus {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Liens désactivés */
+section:last-of-type a[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ===== ANIMATIONS AU CHARGEMENT ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+section:nth-child(1) { animation-delay: 0s; }
+section:nth-child(2) { animation-delay: 0.1s; }
+section:nth-child(3) { animation-delay: 0.15s; }
+section:nth-child(4) { animation-delay: 0.2s; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
@@ -210,5 +268,95 @@ section:last-of-type a:hover {
     
     section h2 {
         font-size: 1.3rem;
+    }
+}
+
+/* ===== MODE SOMBRE ===== */
+@media (prefers-color-scheme: dark) {
+    section {
+        background: rgba(40, 40, 40, 0.9);
+    }
+    
+    section h2 {
+        color: #00c6ff;
+    }
+    
+    section p,
+    section li {
+        color: #e0e0e0;
+    }
+    
+    address a {
+        color: #00c6ff;
+    }
+    
+    address a:hover,
+    address a:focus {
+        color: #7b2ff7;
+    }
+    
+    abbr[title] {
+        text-decoration-color: #00c6ff;
+    }
+    
+    abbr[title]:hover,
+    abbr[title]:focus {
+        color: #00c6ff;
+    }
+}
+
+/* ===== MODE CONTRASTE ÉLEVÉ ===== */
+@media (prefers-contrast: high) {
+    section {
+        border: 2px solid currentColor;
+    }
+    
+    section h2 {
+        border-bottom: 3px solid currentColor;
+    }
+    
+    section:last-of-type a {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ===== RESPECT DE LA PRÉFÉRENCE DE MOUVEMENT RÉDUIT ===== */
+@media (prefers-reduced-motion: reduce) {
+    .picture img,
+    section,
+    section:last-of-type a {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .picture img:hover,
+    section:hover,
+    section:last-of-type a:hover {
+        transform: none;
+    }
+}
+
+/* ===== IMPRESSION ===== */
+@media print {
+    header {
+        margin-top: 0;
+        padding: 1rem;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    section:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    section:last-of-type a {
+        background: none;
+        color: #000;
+        border: 1px solid #000;
     }
 }

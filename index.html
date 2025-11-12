@@ -3,57 +3,130 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CV en ligne de Marion Martinelli - Développeuse Web et Web Mobile en formation, recherche un stage pour mettre en pratique ses compétences en développement.">
+    <meta name="keywords" content="Marion Martinelli, développeur web, développeuse web mobile, CV, stage développement web, Cazaux">
+    <meta name="author" content="Marion Martinelli">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-domaine.com/">
+    <meta property="og:title" content="CV Marion Martinelli - Développeuse Web et Web Mobile">
+    <meta property="og:description" content="Développeuse Web et Web Mobile en formation, recherche un stage pour mettre en pratique ses compétences.">
+    <meta property="og:image" content="./assets/images/portrait.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://votre-domaine.com/">
+    <meta property="twitter:title" content="CV Marion Martinelli - Développeuse Web et Web Mobile">
+    <meta property="twitter:description" content="Développeuse Web et Web Mobile en formation, recherche un stage pour mettre en pratique ses compétences.">
+    <meta property="twitter:image" content="./assets/images/portrait.jpg">
+    
     <link rel="icon" href="./assets/images/logo-code.png" type="image/png">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/style-index.css">
-    <title>CV Marion Martinelli</title>
+    <link rel="stylesheet" href="./assets/css/menu-responsive.css">
+    
+    <!-- Structured Data (JSON-LD) pour le SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Marion Martinelli",
+      "jobTitle": "Développeuse Web et Web Mobile",
+      "telephone": "0646365259",
+      "email": "marion.martinelli.pro@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cazaux",
+        "postalCode": "33260",
+        "addressCountry": "FR"
+      },
+      "url": "https://github.com/StackShade33/",
+      "image": "./assets/images/portrait.jpg"
+    }
+    </script>
+    
+    <title>CV Marion Martinelli - Développeuse Web et Web Mobile | Stage</title>
   </head>
 
   <body>
+    <!-- Lien d'évitement pour l'accessibilité -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
     <header>
-      <nav>
-        <ul>
-          <li><a href="index.html" aria-label="Page d'accueil" class="active">Accueil</a></li>
-          <li><a href="./components/cursus.html" aria-label="Voir mon cursus et mes diplômes">Cursus</a></li>
-          <li><a href="./components/experiences.html" aria-label="Voir mes expériences professionnelles">Expériences</a></li>
-          <li><a href="./components/competences.html" aria-label="Voir mes compétences">Compétences</a></li>
-          <li><a href="./components/formations.html" aria-label="Voir mes formations">Formations</a></li>
-          <li><a href="./components/centres-d-interet.html" aria-label="Voir mes centres d'intérêt">Centres d'intérêt</a></li>
-          <li><a href="./components/lettre-de-motivation.html" aria-label="Lire ma lettre de motivation">Motivation</a></li>
-          <li><a href="./components/lettres-de-recommandation.html" aria-label="Lire mes lettres de recommandation">Recommandations</a></li>
-          <li><a href="./components/me-contacter.html" aria-label="Me contacter">Contact</a></li>
+      <nav role="navigation" aria-label="Navigation principale">
+        <!-- Checkbox cachée pour gérer l'ouverture du menu (pure CSS) -->
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox" aria-label="Ouvrir/Fermer le menu de navigation">
+        
+        <!-- Label qui sert de bouton hamburger -->
+        <label for="menu-toggle" class="menu-icon" tabindex="0">
+          <span class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="sr-only">Menu</span>
+        </label>
+        
+        <ul id="main-menu" class="nav-menu">
+          <li><a href="index.html" aria-current="page" class="active">Accueil</a></li>
+          <li><a href="./components/cursus.html">Cursus</a></li>
+          <li><a href="./components/experiences.html">Expériences</a></li>
+          <li><a href="./components/competences.html">Compétences</a></li>
+          <li><a href="./components/formations.html">Formations</a></li>
+          <li><a href="./components/centres-d-interet.html">Centres d'intérêt</a></li>
+          <li><a href="./components/lettre-de-motivation.html">Motivation</a></li>
+          <li><a href="./components/lettres-de-recommandation.html">Recommandations</a></li>
+          <li><a href="./components/me-contacter.html">Contact</a></li>
         </ul>
       </nav>
       <h1>Qui suis-je ?</h1>
     </header>
 
-    <main>
-      <div class="picture"><img src="./assets/images/portrait.jpg" alt="Mon portrait"></div>
+    <main id="main-content">
+      <div class="picture">
+        <img src="./assets/images/portrait.jpg" alt="Portrait de Marion Martinelli, développeuse web souriante">
+      </div>
 
-      <section>
-        <h2>À propos de moi</h2>
+      <section aria-labelledby="about-heading">
+        <h2 id="about-heading">À propos de moi</h2>
         <p>
           Actuellement en formation de Développeur Web et Web Mobile, je
           recherche un stage pour mettre mes compétences en pratique et
           contribuer à des projets concrets. Motivée et passionnée par le code,
-          je suis prête à m’investir pleinement à vos côtés et à relever les
+          je suis prête à m'investir pleinement à vos côtés et à relever les
           défis !
         </p>
       </section>
 
-      <section>
-        <h2>Coordonnées</h2>
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Coordonnées</h2>
         <address>
           <ul>
-            <li><a href="tel:0646365259">06 46 36 52 59</a></li>
-            <li><a href="mailto:marion.martinelli.pro@gmail.com">marion.martinelli.pro@gmail.com</a></li>
-            <li><a href="https://tinyurl.com/yk5p2bjy" target="_blank" rel="noopener">33260 Cazaux</a></li>
+            <li>
+              <a href="tel:+33646365259" aria-label="Téléphoner au 06 46 36 52 59">
+                <span aria-hidden="true">📞</span> 06 46 36 52 59
+              </a>
+            </li>
+            <li>
+              <a href="mailto:marion.martinelli.pro@gmail.com" aria-label="Envoyer un email à marion.martinelli.pro@gmail.com">
+                <span aria-hidden="true">✉️</span> marion.martinelli.pro@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://tinyurl.com/yk5p2bjy" target="_blank" rel="noopener noreferrer" aria-label="Voir ma localisation à Cazaux sur Google Maps (ouvre dans un nouvel onglet)">
+                <span aria-hidden="true">📍</span> 33260 Cazaux
+              </a>
+            </li>
           </ul>
         </address>
       </section>
 
-      <section>
-        <h2>Informations utiles</h2>
+      <section aria-labelledby="info-heading">
+        <h2 id="info-heading">Informations utiles</h2>
         <ul>
           <li>36 ans</li>
           <!-- Pour après
@@ -61,24 +134,23 @@
           -->
           <li>Mariée / 1 enfant</li>
           <li>Permis B et A</li>
-          <li>RQTH</li>
+          <li><abbr title="Reconnaissance de la Qualité de Travailleur Handicapé">RQTH</abbr></li>
         </ul>
       </section>
 
-      <section>
-        <h2>Liens utiles</h2>
+      <section aria-labelledby="links-heading">
+        <h2 id="links-heading">Liens utiles</h2>
         <ul>
-          <li><a href="#">LinkedIn (bientôt)</a></li>
-          <li><a href="https://github.com/StackShade33/">GitHub</a></li>
-          <li><a href="#">Portfolio (bientôt)</a></li>
-          <li><a href="#">CV version PDF (bientôt)</a></li>
+          <li><a href="#" aria-disabled="true">LinkedIn (bientôt)</a></li>
+          <li><a href="https://github.com/StackShade33/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="#" aria-disabled="true">Portfolio (bientôt)</a></li>
+          <li><a href="#" aria-disabled="true">CV version PDF (bientôt)</a></li>
         </ul>
       </section>
     </main>
 
-    <footer>
-      <!-- Voir pour mettre à jour la date automatiquement avec JS-->
-      <small>Ce site a été mis à jour le <time datetime="2025-11-01">01/11/2025</time></small>
+    <footer role="contentinfo">
+      <small>Ce site a été mis à jour le <time datetime="2025-11-01">1<sup>er</sup> novembre 2025</time></small>
     </footer>
   </body>
 </html>
