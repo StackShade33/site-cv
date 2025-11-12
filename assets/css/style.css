@@ -260,7 +260,7 @@ footer .btn-home:hover {
     }
 
     nav {
-        padding: 0.8rem 0.5rem;
+        padding: 1.2rem 0.5rem; /* CORRIGÉ : garde 1.2rem en hauteur pour contenir le burger */
     }
     
     /* Menu déroulant sur mobile */
