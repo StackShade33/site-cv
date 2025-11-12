@@ -84,7 +84,7 @@ abbr[title] {
     padding: 10px;
     z-index: 1001;
     position: fixed; /* IMPORTANT : Fixed pour rester dans la nav même en scrollant */
-    top: 10px; /* Position depuis le haut de la page */
+    top: 0.6rem; /* CORRIGÉ : Position ajustée pour être dans la nav */
     right: 15px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
