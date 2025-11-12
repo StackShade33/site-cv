@@ -42,6 +42,12 @@ section:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Focus visible pour l'accessibilité */
+section:focus-within {
+    outline: 3px solid #7b2ff7;
+    outline-offset: 3px;
+}
+
 /* ===== TITRES DES LETTRES ===== */
 section h2 {
     color: #7b2ff7;
@@ -59,7 +65,34 @@ section p {
     font-style: italic;
 }
 
-/* ===== IMAGES DES LETTRES ===== */
+.job-title {
+    color: #333;
+}
+
+section p time {
+    font-weight: 700;
+    color: #7b2ff7;
+}
+
+/* ===== ABRÉVIATIONS ===== */
+abbr[title] {
+    text-decoration: underline dotted #7b2ff7;
+    cursor: help;
+    border-bottom: none;
+}
+
+abbr[title]:hover,
+abbr[title]:focus {
+    text-decoration-color: #00c6ff;
+    color: #7b2ff7;
+}
+
+/* ===== FIGURE ET IMAGES DES LETTRES ===== */
+figure {
+    margin: 0;
+    position: relative;
+}
+
 section img {
     width: 100%;
     height: auto;
@@ -79,6 +112,13 @@ section img:hover {
     box-shadow: 0 8px 25px rgba(123, 47, 247, 0.3);
 }
 
+/* Focus visible sur les images pour navigation clavier */
+section img:focus {
+    outline: 3px solid #7b2ff7;
+    outline-offset: 5px;
+    transform: scale(1.02);
+}
+
 /* ===== EFFET DE DISTINCTION ENTRE LES LETTRES ===== */
 section:nth-of-type(odd) {
     border-left: 5px solid;
@@ -89,6 +129,27 @@ section:nth-of-type(even) {
     border-left: 5px solid;
     border-image: linear-gradient(180deg, #00c6ff, #7b2ff7) 1;
 }
+
+/* ===== ANIMATIONS AU CHARGEMENT ===== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: slideInUp 0.6s ease-out backwards;
+}
+
+section:nth-of-type(1) { animation-delay: 0s; }
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.4s; }
+section:nth-of-type(4) { animation-delay: 0.6s; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
@@ -126,6 +187,10 @@ section:nth-of-type(even) {
         padding: 1rem;
     }
     
+    header h1 {
+        font-size: 1.3rem;
+    }
+    
     section {
         padding: 1rem;
     }
@@ -140,6 +205,70 @@ section:nth-of-type(even) {
     
     section img {
         border-radius: 8px;
+        padding: 0.3rem;
+    }
+}
+
+/* ===== MODE SOMBRE ===== */
+@media (prefers-color-scheme: dark) {
+    section {
+        background: rgba(40, 40, 40, 0.95);
+    }
+    
+    section h2 {
+        color: #00c6ff;
+    }
+    
+    section p {
+        color: #b0b0b0;
+    }
+    
+    .job-title {
+        color: #e0e0e0;
+    }
+    
+    section p time {
+        color: #00c6ff;
+    }
+    
+    section img {
+        background: #2d2d2d;
+        border: 1px solid #444;
+    }
+    
+    abbr[title] {
+        text-decoration-color: #00c6ff;
+    }
+    
+    abbr[title]:hover,
+    abbr[title]:focus {
+        color: #00c6ff;
+    }
+}
+
+/* ===== MODE CONTRASTE ÉLEVÉ ===== */
+@media (prefers-contrast: high) {
+    section {
+        border: 2px solid currentColor;
+        border-left-width: 5px;
+    }
+    
+    section img {
+        border: 3px solid currentColor;
+    }
+}
+
+/* ===== RESPECT DE LA PRÉFÉRENCE DE MOUVEMENT RÉDUIT ===== */
+@media (prefers-reduced-motion: reduce) {
+    section,
+    section img {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    section:hover,
+    section img:hover {
+        transform: none;
     }
 }
 
@@ -147,4 +276,35 @@ section:nth-of-type(even) {
 /* Si tu veux ajouter un effet de zoom en cliquant sur l'image plus tard */
 section img:active {
     transform: scale(0.98);
+}
+
+/* ===== IMPRESSION ===== */
+@media print {
+    header {
+        margin-top: 0;
+        padding: 1rem;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        border-left-width: 3px;
+    }
+    
+    section:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    section img {
+        max-width: 100%;
+        page-break-inside: avoid;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    section img:hover {
+        transform: none;
+    }
 }

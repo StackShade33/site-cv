@@ -47,6 +47,12 @@ figure:hover {
     box-shadow: 0 8px 30px rgba(123, 47, 247, 0.3);
 }
 
+/* Focus visible pour l'accessibilité */
+figure:focus-within {
+    outline: 3px solid #7b2ff7;
+    outline-offset: 3px;
+}
+
 /* ===== IMAGES ===== */
 figure img {
     width: 100%;
@@ -147,6 +153,7 @@ figure {
     animation: fadeInUp 0.6s ease-out backwards;
 }
 
+figure:nth-child(1) { animation-delay: 0s; }
 figure:nth-child(2) { animation-delay: 0.1s; }
 figure:nth-child(3) { animation-delay: 0.2s; }
 figure:nth-child(4) { animation-delay: 0.3s; }
@@ -155,3 +162,43 @@ figure:nth-child(6) { animation-delay: 0.5s; }
 figure:nth-child(7) { animation-delay: 0.6s; }
 figure:nth-child(8) { animation-delay: 0.7s; }
 figure:nth-child(9) { animation-delay: 0.8s; }
+
+/* Respect de la préférence de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+    figure,
+    figure img {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    figure:hover {
+        transform: none;
+    }
+    
+    figure:hover img {
+        transform: none;
+    }
+}
+
+/* ===== MODE SOMBRE ===== */
+@media (prefers-color-scheme: dark) {
+    figure {
+        background: rgba(40, 40, 40, 0.95);
+    }
+    
+    figcaption {
+        color: #e0e0e0;
+        background: linear-gradient(135deg, rgba(123, 47, 247, 0.15), rgba(0, 198, 255, 0.15));
+    }
+}
+
+/* ===== MODE CONTRASTE ÉLEVÉ ===== */
+@media (prefers-contrast: high) {
+    figure {
+        border: 2px solid currentColor;
+    }
+    
+    figcaption {
+        border-top: 2px solid currentColor;
+    }
+}

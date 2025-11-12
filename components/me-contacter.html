@@ -3,36 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contactez Marion Martinelli via ce formulaire de contact pour toute demande professionnelle ou personnelle. Développeuse Web et Web Mobile recherchant un stage.">
+    <meta name="keywords" content="Marion Martinelli, contact, formulaire de contact, développeur web, stage, recrutement, message">
+    <meta name="author" content="Marion Martinelli">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-domaine.com/components/me-contacter.html">
+    <meta property="og:title" content="Me Contacter - Marion Martinelli | Formulaire de Contact">
+    <meta property="og:description" content="Contactez-moi pour toute demande professionnelle ou personnelle via ce formulaire de contact.">
+    <meta property="og:image" content="../assets/images/portrait.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://votre-domaine.com/components/me-contacter.html">
+    <meta property="twitter:title" content="Me Contacter - Marion Martinelli | Formulaire de Contact">
+    <meta property="twitter:description" content="Contactez-moi pour toute demande professionnelle ou personnelle via ce formulaire de contact.">
+    <meta property="twitter:image" content="../assets/images/portrait.jpg">
+    
     <link rel="icon" href="../assets/images/logo-code.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/style-contact.css">
-    <title>Me contacter</title>
+    
+    <title>Me Contacter - Marion Martinelli | Formulaire de Contact</title>
 </head>
 <body>
+    <!-- Lien d'évitement pour l'accessibilité -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
     <header>
-        <nav>
+        <nav role="navigation" aria-label="Navigation principale">
+            <!-- Checkbox cachée pour gérer l'ouverture du menu (pure CSS) -->
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox" aria-label="Ouvrir/Fermer le menu de navigation">
+            
+            <!-- Label qui sert de bouton hamburger -->
+            <label for="menu-toggle" class="menu-icon" tabindex="0">
+                <span class="hamburger-icon" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="sr-only">Menu</span>
+            </label>
+            
             <ul>
-                <li><a href="../index.html" aria-label="Retourner à la page d'accueil">Accueil</a></li>
-                <li><a href="../components/cursus.html" aria-label="Voir mon cursus et mes diplômes">Cursus</a></li>
-                <li><a href="../components/experiences.html" aria-label="Voir mes expériences professionnelles">Expériences</a></li>
-                <li><a href="../components/competences.html" aria-label="Voir mes compétences">Compétences</a></li>
-                <li><a href="../components/formations.html" aria-label="Voir mes formations">Formations</a></li>
-                <li><a href="../components/centres-d-interet.html" aria-label="Voir mes centres d'intérêt">Centres d'intérêt</a></li>
-                <li><a href="../components/lettre-de-motivation.html" aria-label="Lire ma lettre de motivation">Motivation</a></li>
-                <li><a href="../components/lettres-de-recommandation.html" aria-label="Lire mes lettres de recommandation">Recommandations</a></li>
-                <li><a href="../components/me-contacter.html" aria-label="Me contacter" class="active">Contact</a></li>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../components/cursus.html">Cursus</a></li>
+                <li><a href="../components/experiences.html">Expériences</a></li>
+                <li><a href="../components/competences.html">Compétences</a></li>
+                <li><a href="../components/formations.html">Formations</a></li>
+                <li><a href="../components/centres-d-interet.html">Centres d'intérêt</a></li>
+                <li><a href="../components/lettre-de-motivation.html">Motivation</a></li>
+                <li><a href="../components/lettres-de-recommandation.html">Recommandations</a></li>
+                <li><a href="../components/me-contacter.html" aria-current="page" class="active">Contact</a></li>
             </ul>
         </nav>
         <h1>Formulaire de Contact</h1>
     </header>
     
-    <main><!--Intégrer un tableau avec les jours et horaires de disponibilité-->
-        <form action="#" method="post">
+    <main id="main-content" role="main">
+        <!-- Note : Intégrer un tableau avec les jours et horaires de disponibilité -->
+        <form action="#" method="post" enctype="multipart/form-data" aria-labelledby="form-title">
+            <h2 id="form-title" class="sr-only">Formulaire de contact pour Marion Martinelli</h2>
+            
             <section>
                 <fieldset>
                     <legend>Informations personnelles</legend>
 
-                    <div>
+                    <div role="group" aria-labelledby="gender-label">
+                        <span id="gender-label" class="field-label">Civilité</span>
                         <input type="radio" name="gender" id="Mme" value="Mme">
                         <label for="Mme">Mme</label>
                         <input type="radio" name="gender" id="M" value="M." checked>
@@ -40,16 +82,20 @@
                     </div>
 
                     <div>
-                        <label for="firstname">Prénom *</label>
-                        <input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required>
-                        <label for="lastname">Nom *</label>
-                        <input type="text" name="lastname" id="lastname" placeholder="Votre nom" required>
+                        <label for="firstname">Prénom <abbr title="Champ obligatoire" aria-label="obligatoire">*</abbr></label>
+                        <input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required aria-required="true">
+                        
+                        <label for="lastname">Nom <abbr title="Champ obligatoire" aria-label="obligatoire">*</abbr></label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Votre nom" required aria-required="true">
+                        
                         <label for="structure">Structure</label>
-                        <input type="text" name="structure" id="structure" placeholder="Votre structure">
-                        <label for="email">Email *</label>
-                        <input type="email" name="email" id="email" placeholder="Votre adresse mail" required>
-                        <label for="tel">Tél *</label>
-                        <input type="tel" name="tel" id="tel" placeholder="Votre téléphone" required>
+                        <input type="text" name="structure" id="structure" placeholder="Votre entreprise ou organisation">
+                        
+                        <label for="email">Email <abbr title="Champ obligatoire" aria-label="obligatoire">*</abbr></label>
+                        <input type="email" name="email" id="email" placeholder="votre.email@exemple.com" required aria-required="true" autocomplete="email">
+                        
+                        <label for="tel">Téléphone <abbr title="Champ obligatoire" aria-label="obligatoire">*</abbr></label>
+                        <input type="tel" name="tel" id="tel" placeholder="06 12 34 56 78" required aria-required="true" pattern="[0-9\s\.\-\(\)]+" autocomplete="tel">
                     </div>
                 </fieldset>
             </section>
@@ -60,35 +106,36 @@
 
                     <div>
                         <label for="object">Dans quel cadre</label>
-                        <select name="object" id="object">
+                        <select name="object" id="object" aria-label="Sélectionnez le contexte de votre message">
                             <option value="private">Personnel</option>
-                            <option value="professional">Professionnel</option>
+                            <option value="professional" selected>Professionnel</option>
                         </select>
                     </div>
 
                     <div>
-                        <label for="topic">Objet *</label>
-                        <input type="text" name="topic" id="topic" placeholder="L'objet de votre message" required>
+                        <label for="topic">Objet <abbr title="Champ obligatoire" aria-label="obligatoire">*</abbr></label>
+                        <input type="text" name="topic" id="topic" placeholder="L'objet de votre message" required aria-required="true">
                     </div>
 
                     <div>
-                        <label for="message">Message *</label>
-                        <textarea name="message" id="message" cols="60" rows="10" placeholder="Saisissez votre message ici" required></textarea>
+                        <label for="message">Message <abbr title="Champ obligatoire" aria-label="obligatoire">*</abbr></label>
+                        <textarea name="message" id="message" cols="60" rows="10" placeholder="Saisissez votre message ici" required aria-required="true"></textarea>
                     </div>
 
                     <div>
-                        <label for="attachment" >Ajouter une pièce jointe</label>
-                        <input type="file" name="attachment" id="attachment">
+                        <label for="attachment">Ajouter une pièce jointe (optionnel)</label>
+                        <input type="file" name="attachment" id="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" aria-describedby="attachment-help">
+                        <small id="attachment-help" class="help-text">Formats acceptés : PDF, Word, Images (5 Mo max)</small>
                     </div>
 
                     <div>
-                        <label for="attachment2" ></label>
-                        <input type="file" name="attachment" id="attachment2">
+                        <label for="attachment2">Pièce jointe 2 (optionnel)</label>
+                        <input type="file" name="attachment2" id="attachment2" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
                     </div>
 
                     <div>
-                        <label for="attachment3" ></label>
-                        <input type="file" name="attachment" id="attachment3">
+                        <label for="attachment3">Pièce jointe 3 (optionnel)</label>
+                        <input type="file" name="attachment3" id="attachment3" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
                     </div>
                 </fieldset>
             </section>
@@ -102,33 +149,38 @@
                         <label for="copy">Recevoir une copie du message</label>
                     </div>
 
-                    <div>
-                        <label>Être contacté de préférence</label>
-                        <input type="checkbox" name="contact" id="contact-phone" value="phone">
+                    <div role="group" aria-labelledby="contact-pref-label">
+                        <span id="contact-pref-label" class="field-label">Être contacté de préférence :</span>
+                        <input type="checkbox" name="contact-phone" id="contact-phone" value="phone">
                         <label for="contact-phone">Par téléphone</label>
-                        <input type="checkbox" name="contact" id="contact-email" value="email" checked>
+                        <input type="checkbox" name="contact-email" id="contact-email" value="email" checked>
                         <label for="contact-email">Par email</label>
                     </div>
                 </fieldset>
             </section>
 
-            <section>
+            <section class="form-actions">
                 <div>
-                    <strong>*: champs obligatoires</strong>
+                    <strong><abbr title="Champ obligatoire">*</abbr> : champs obligatoires</strong>
                 </div>
 
-                <div> <!--Si je mets la class="button" dans le div ça ne fonctionne pas-->
-                    <input class="button" type="submit" name="submit" id="submit" value="Valider">
-                    <input class="button" type="reset" name="reset" id="reset" value="Effacer">
+                <div class="button-group">
+                    <button type="submit" class="button button-submit" name="submit" id="submit">
+                        <span aria-hidden="true">✓</span> Envoyer
+                    </button>
+                    <button type="reset" class="button button-reset" name="reset" id="reset">
+                        <span aria-hidden="true">✕</span> Effacer
+                    </button>
                 </div>
             </section>
         </form>
 
     </main>
     
-    <footer>
-        <small>*Cette page est une démonstration technique. Le formulaire n'est pas fonctionnel, merci d'utiliser les coordonnées disponibles sur la page d'accueil.</small>
-        <a href="../index.html" class="btn-home">Retour à l'accueil</a>
+    <footer role="contentinfo">
+        <small><strong>Note importante :</strong> Cette page est une démonstration technique. Le formulaire n'est pas fonctionnel, merci d'utiliser les coordonnées disponibles sur la <a href="../index.html">page d'accueil</a>.</small>
+        <a href="../index.html" class="btn-home" aria-label="Retourner à la page d'accueil">Retour à l'accueil</a>
+        <small>Ce site a été mis à jour le <time datetime="2025-11-01">1<sup>er</sup> novembre 2025</time></small>
     </footer>
 </body>
 </html>

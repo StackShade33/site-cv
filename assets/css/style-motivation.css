@@ -28,36 +28,53 @@ main {
     font-family: 'Georgia', 'Times New Roman', serif;
 }
 
+/* Focus visible pour l'accessibilité */
+main:focus-within {
+    outline: 3px solid #7b2ff7;
+    outline-offset: 5px;
+}
+
+/* ===== ARTICLE (CONTENEUR DE LA LETTRE) ===== */
+article {
+    position: relative;
+}
+
 /* ===== MISE EN PAGE LETTRE ===== */
-main > div {
+article > div {
     margin-bottom: 1.5rem;
 }
 
 /* Date */
-main > div:first-of-type {
+.letter-date {
     text-align: right;
     font-style: italic;
     color: #666;
 }
 
+.letter-date time {
+    font-weight: 500;
+}
+
 /* Adresse expéditeur */
-main > div:nth-of-type(2) address {
+.sender-address address {
     font-style: normal;
     line-height: 1.6;
     color: #333;
 }
 
-main > div:nth-of-type(2) address p {
+.sender-address address p {
     margin: 0.2rem 0;
 }
 
-main > div:nth-of-type(2) address a {
+.sender-address address a {
     color: #7b2ff7;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-main > div:nth-of-type(2) address a:hover {
+.sender-address address a:hover,
+.sender-address address a:focus {
     color: #00c6ff;
     text-decoration: underline;
 }
@@ -81,53 +98,76 @@ main > div:nth-of-type(2) address a:hover {
 }
 
 /* Objet */
-main > div:nth-of-type(3) {
+.letter-subject {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
-main > div:nth-of-type(3) p {
+.letter-subject p {
     font-weight: bold;
     color: #02263e;
+}
+
+.letter-subject strong {
     text-decoration: underline;
 }
 
 /* Corps de la lettre */
-main > div:last-of-type {
+.letter-body {
     text-align: justify;
     line-height: 1.8;
     color: #333;
 }
 
-main > div:last-of-type p {
+.letter-body p {
     margin-bottom: 1.2rem;
     text-indent: 2rem;
-    font-weight: normal;
-    text-decoration: none;
 }
 
 /* Premier paragraphe (salutation) */
-main > div:last-of-type p:first-child {
+.letter-body .greeting {
     text-indent: 0;
     margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
-/* Avant-dernier et dernier paragraphes (formule de politesse et signature) */
-main > div:last-of-type p:nth-last-child(2),
-main > div:last-of-type p:nth-last-child(1) {
+/* Paragraphe de clôture */
+.letter-body .closing {
+    margin-top: 1.5rem;
+}
+
+/* Formule de politesse */
+.letter-body .salutation {
     text-indent: 0;
     margin-top: 1.5rem;
 }
 
 /* Signature */
-main > div:last-of-type p:last-child {
+.letter-body .signature {
     text-align: right;
     font-weight: bold;
     color: #02263e;
     margin-top: 2rem;
+    text-indent: 0;
 }
 
-/* ===== FOOTER SPÉCIAL ===== */
+/* ===== ANIMATIONS AU CHARGEMENT ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* ===== FOOTER ===== */
 footer {
     background: linear-gradient(90deg, #7b2ff7, #00c6ff);
     color: #ffffff;
@@ -136,6 +176,7 @@ footer {
     flex-direction: column;
     gap: 0.7rem;
     align-items: center;
+    margin-top: 2rem;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -154,11 +195,11 @@ footer {
         margin: 2rem 1rem 0; /* Ajusté */
     }
     
-    main > div:last-of-type {
+    .letter-body {
         text-align: left;
     }
     
-    main > div:last-of-type p {
+    .letter-body p {
         text-indent: 0;
         margin-bottom: 1rem;
     }
@@ -184,8 +225,69 @@ footer {
         font-size: 0.95rem;
     }
     
-    main > div:last-of-type {
+    .letter-body {
         line-height: 1.6;
+    }
+    
+    .letter-date {
+        font-size: 0.9rem;
+    }
+    
+    .sender-address {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== MODE SOMBRE ===== */
+@media (prefers-color-scheme: dark) {
+    main {
+        background: rgba(30, 30, 30, 0.98);
+    }
+    
+    .letter-date {
+        color: #b0b0b0;
+    }
+    
+    .sender-address address,
+    .destination address,
+    .letter-body {
+        color: #e0e0e0;
+    }
+    
+    .sender-address address a {
+        color: #00c6ff;
+    }
+    
+    .sender-address address a:hover,
+    .sender-address address a:focus {
+        color: #7b2ff7;
+    }
+    
+    .letter-subject p {
+        color: #00c6ff;
+    }
+    
+    .letter-body .signature {
+        color: #00c6ff;
+    }
+}
+
+/* ===== MODE CONTRASTE ÉLEVÉ ===== */
+@media (prefers-contrast: high) {
+    main {
+        border: 3px solid currentColor;
+    }
+    
+    .sender-address address a,
+    .letter-subject p {
+        border-bottom: 2px solid currentColor;
+    }
+}
+
+/* ===== RESPECT DE LA PRÉFÉRENCE DE MOUVEMENT RÉDUIT ===== */
+@media (prefers-reduced-motion: reduce) {
+    main {
+        animation: none !important;
     }
 }
 
@@ -195,8 +297,12 @@ footer {
         background: white;
     }
     
-    nav, footer {
+    header {
         display: none;
+    }
+    
+    nav, footer {
+        display: none !important;
     }
     
     main {
@@ -204,5 +310,36 @@ footer {
         max-width: 100%;
         margin: 0;
         padding: 2cm;
+        background: white;
+    }
+    
+    .letter-body {
+        text-align: justify;
+    }
+    
+    .letter-body p {
+        text-indent: 2rem;
+    }
+    
+    .letter-body .greeting,
+    .letter-body .salutation {
+        text-indent: 0;
+    }
+    
+    .sender-address address a {
+        color: #000;
+        text-decoration: none;
+    }
+    
+    /* Éviter les sauts de page au milieu de paragraphes */
+    p {
+        page-break-inside: avoid;
+    }
+    
+    /* S'assurer que la signature reste avec la formule de politesse */
+    .letter-body .salutation,
+    .letter-body .signature {
+        page-break-inside: avoid;
+        page-break-before: avoid;
     }
 }
