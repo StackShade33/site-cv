@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #333;
     background: url(../images/textures/vague-lisse.jpg) fixed no-repeat top left / cover;
-    overflow-x: hidden; /* AJOUTÉ : Empêche le scroll horizontal sur toutes les pages */
+    overflow-x: hidden; /* Empêche le scroll horizontal sur toutes les pages */
 }
 
 /* ===== ACCESSIBILITÉ ===== */
@@ -83,8 +83,8 @@ abbr[title] {
     cursor: pointer;
     padding: 10px;
     z-index: 1001;
-    position: fixed; /* MODIFIÉ : de absolute à fixed */
-    top: 10px;
+    position: fixed; /* IMPORTANT : Fixed pour rester dans la nav même en scrollant */
+    top: 10px; /* Position depuis le haut de la page */
     right: 15px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
