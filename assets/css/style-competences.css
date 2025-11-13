@@ -120,7 +120,7 @@ abbr[title]:focus {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     header {
-        margin-top: 60px;
+        margin-top: 85px;
         padding: 1.5rem 1rem;
     }
     
@@ -148,7 +148,7 @@ abbr[title]:focus {
 
 @media (max-width: 480px) {
     header {
-        margin-top: 55px;
+        margin-top: 80px;
         padding: 1rem;
     }
     

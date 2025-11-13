@@ -176,7 +176,7 @@ section:nth-of-type(2) li:nth-child(2) { animation-delay: 0.45s; }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     header {
-        margin-top: 60px;
+        margin-top: 85px;
         padding: 1.5rem 1rem;
     }
     
@@ -209,7 +209,7 @@ section:nth-of-type(2) li:nth-child(2) { animation-delay: 0.45s; }
 
 @media (max-width: 480px) {
     header {
-        margin-top: 55px;
+        margin-top: 80px;
         padding: 1rem;
     }
     
