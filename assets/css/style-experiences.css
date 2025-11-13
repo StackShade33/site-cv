@@ -137,7 +137,7 @@ section:nth-of-type(2) article:hover {
 }
 
 section:nth-of-type(2) article li::before {
-    content: "▸";
+    content: "★";
 }
 
 /* ===== ANIMATIONS AU CHARGEMENT ===== */
@@ -171,7 +171,7 @@ article:nth-child(10) { animation-delay: 0.5s; }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     header {
-        margin-top: 60px;
+        margin-top: 85px;
         padding: 1.5rem 1rem;
     }
     
@@ -199,7 +199,7 @@ article:nth-child(10) { animation-delay: 0.5s; }
 
 @media (max-width: 480px) {
     header {
-        margin-top: 55px;
+        margin-top: 80px;
         padding: 1rem;
     }
     
