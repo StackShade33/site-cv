@@ -55,6 +55,18 @@ abbr[title] {
     cursor: help;
 }
 
+/* IMPORTANT : Empêcher les extensions de navigateur de transformer les abbr en liens */
+abbr {
+    cursor: help !important;
+    pointer-events: none !important; /* Bloque tout clic */
+    text-decoration: underline dotted !important;
+    color: inherit !important; /* Garde la couleur du texte parent */
+}
+
+abbr:hover {
+    text-decoration-style: solid !important;
+}
+
 /* Amélioration pour les lecteurs d'écran */
 .sr-only {
     position: absolute;
@@ -84,7 +96,7 @@ abbr[title] {
     padding: 10px;
     z-index: 1001;
     position: fixed; /* IMPORTANT : Fixed pour rester dans la nav même en scrollant */
-    top: 1.2rem; /* AJUSTÉ : pour être centré dans la nav beaucoup plus haute */
+    top: 1.8rem; /* CENTRÉ : dans la nav de 2.5rem de padding */
     right: 15px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
@@ -133,7 +145,7 @@ nav {
     left: 0;
     width: 100%;
     background: linear-gradient(90deg, #7b2ff7, #00c6ff);
-    padding: 1.8rem 0; /* AUGMENTÉ ENCORE : de 1.2rem à 1.8rem */
+    padding: 2.5rem 0; /* AUGMENTÉ MASSIVEMENT : de 1.8rem à 2.5rem */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 1000;
 }
@@ -260,7 +272,7 @@ footer .btn-home:hover {
     }
 
     nav {
-        padding: 1.8rem 0.5rem; /* AUGMENTÉ : pareil que desktop, 1.8rem */
+        padding: 2.5rem 0.5rem; /* ÉNORME : 2.5rem pour vraiment englober le burger */
     }
     
     /* Menu déroulant sur mobile */
