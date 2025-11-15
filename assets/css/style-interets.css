@@ -2,7 +2,7 @@
 
 /* ===== STYLE DU HEADER ===== */
 header {
-    margin-top: 70px; /* Pour compenser la nav fixe */
+    margin-top: 100px; /* ✅ DESKTOP : Compense la nav de 1rem (environ 32px de hauteur totale) */
     padding: 2rem 1rem;
     text-align: center;
     margin-bottom: 0;
@@ -83,7 +83,7 @@ figcaption {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     header {
-        margin-top: 85px;
+        margin-top: 85px; /* ✅ TABLETTE : Compense la nav haute (2.5rem) */
         padding: 1.5rem 1rem;
     }
     
@@ -114,7 +114,7 @@ figcaption {
 
 @media (max-width: 480px) {
     header {
-        margin-top: 80px;
+        margin-top: 80px; /* ✅ MOBILE : Compense la nav haute (2.5rem) */
         padding: 1rem;
     }
     

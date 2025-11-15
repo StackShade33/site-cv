@@ -95,8 +95,8 @@ abbr:hover {
     cursor: pointer;
     padding: 10px;
     z-index: 1001;
-    position: fixed; /* IMPORTANT : Fixed pour rester dans la nav même en scrollant */
-    top: 1.8rem; /* CENTRÉ : dans la nav de 2.5rem de padding */
+    position: fixed;
+    top: 1.8rem; /* Position pour mobile (nav haute de 2.5rem) */
     right: 15px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
@@ -145,7 +145,7 @@ nav {
     left: 0;
     width: 100%;
     background: linear-gradient(90deg, #7b2ff7, #00c6ff);
-    padding: 2.5rem 0; /* AUGMENTÉ MASSIVEMENT : de 1.8rem à 2.5rem */
+    padding: 1rem 0; /* ✅ DESKTOP : Nav normale */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 1000;
 }
@@ -272,7 +272,7 @@ footer .btn-home:hover {
     }
 
     nav {
-        padding: 2.5rem 0.5rem; /* ÉNORME : 2.5rem pour vraiment englober le burger */
+        padding: 2.5rem 0.5rem; /* ✅ MOBILE : Nav haute pour contenir le burger */
     }
     
     /* Menu déroulant sur mobile */
